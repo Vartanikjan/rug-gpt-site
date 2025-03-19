@@ -79,10 +79,18 @@
             
             resultText.innerHTML = "🔍 Scanning contract... Please wait.";
 
-            // Simulating AI scan with a random risk score
+            // Simulated risk calculation (replace with real logic later)
             setTimeout(() => {
-                let risk = Math.floor(Math.random() * 100) + 1; // Randomized risk score
-                resultText.innerHTML = `🚨 Rug Risk: ${risk}% 🚨`;
+                let riskScore = Math.floor(Math.random() * 100) + 1;
+                let riskLabel = "✅ LOW RISK! Contract seems safe.";
+
+                if (riskScore > 80) {
+                    riskLabel = "🚨 HIGH RUG RISK! 🚨";
+                } else if (riskScore > 50) {
+                    riskLabel = "⚠️ MEDIUM RISK! Proceed with caution.";
+                }
+
+                resultText.innerHTML = `🚨 Rug Risk Score: ${riskScore}% - ${riskLabel}`;
             }, 2000);
         }
     </script>
